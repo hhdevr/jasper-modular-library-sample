@@ -1,4 +1,4 @@
-package com.chaykin.jaspermodularsample.module.model;
+package com.chaykin.jasper.sample.module.model;
 
 import lombok.Data;
 

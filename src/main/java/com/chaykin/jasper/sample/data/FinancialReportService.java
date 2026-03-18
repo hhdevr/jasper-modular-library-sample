@@ -1,14 +1,13 @@
-package com.chaykin.jaspermodularsample.data;
+package com.chaykin.jasper.sample.data;
 
-
-import com.chaykin.jaspermodularsample.module.ExpenseModule;
-import com.chaykin.jaspermodularsample.module.ModularFinancialReportModule;
-import com.chaykin.jaspermodularsample.module.ProfitModule;
-import com.chaykin.jaspermodularsample.module.RevenueModule;
-import com.chaykin.jaspermodularsample.module.model.CompanyDetails;
-import com.chaykin.jaspermodularsample.module.model.ExpenseItem;
-import com.chaykin.jaspermodularsample.module.model.ProfitBreakdown;
-import com.chaykin.jaspermodularsample.module.model.RevenueItem;
+import com.chaykin.jasper.sample.module.ExpenseModule;
+import com.chaykin.jasper.sample.module.ModularFinancialReportModule;
+import com.chaykin.jasper.sample.module.ProfitModule;
+import com.chaykin.jasper.sample.module.RevenueModule;
+import com.chaykin.jasper.sample.module.model.CompanyDetails;
+import com.chaykin.jasper.sample.module.model.ExpenseItem;
+import com.chaykin.jasper.sample.module.model.ProfitBreakdown;
+import com.chaykin.jasper.sample.module.model.RevenueItem;
 
 import java.util.List;
 

@@ -3,23 +3,42 @@
 <jasperReport bottomMargin="20" columnWidth="555" language="java" leftMargin="20" name="Blank_A4"
               pageHeight="842" pageWidth="595" rightMargin="20" topMargin="20"
               uuid="4beba0ab-4b7d-4d13-a44c-74748a6ca794">
-    <subDataset name="items">
+    <dataset name="items">
         <field class="java.lang.String" name="category" />
         <field class="java.lang.Double" name="amount" />
         <field class="java.lang.Double" name="percent" />
-    </subDataset>
+    </dataset>
     <parameter class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" name="items" />
     <parameter class="java.lang.Double" name="growthPercent" />
     <parameter class="java.lang.Double" name="totalRevenue" />
     <query language="sql" />
     <background splitType="Stretch" />
-    <title height="79" splitType="Stretch" />
-    <pageHeader height="35" splitType="Stretch" />
-    <columnHeader height="61" splitType="Stretch" />
     <detail>
-        <band height="125" splitType="Stretch" />
+        <band height="125" splitType="Stretch">
+            <element height="90" kind="component" uuid="bef9361c-3c8b-4426-b6e3-715b4472d542"
+                     width="90" x="0" y="0">
+                <component kind="list">
+                    <datasetRun subDataset="items" uuid="8696db83-7d9e-422a-ae4a-47e1400824f6">
+                        <dataSourceExpression><![CDATA[$P{items}]]></dataSourceExpression>
+                    </datasetRun>
+                    <contents height="30" width="90">
+                        <element height="30" kind="textField"
+                                 uuid="2a2e5052-70fc-4310-8e9a-dc27b8164dad" width="30" x="0" y="0">
+                            <expression><![CDATA[$F{category}]]></expression>
+                        </element>
+                        <element height="30" kind="textField"
+                                 uuid="8a6b8dbc-82a3-4267-bc31-1874dd1265db" width="30" x="30"
+                                 y="0">
+                            <expression><![CDATA[$F{amount}]]></expression>
+                        </element>
+                        <element height="30" kind="textField"
+                                 uuid="c2d118f9-baa0-41c5-a0b2-725413595267" width="30" x="60"
+                                 y="0">
+                            <expression><![CDATA[$F{percent}]]></expression>
+                        </element>
+                    </contents>
+                </component>
+            </element>
+        </band>
     </detail>
-    <columnFooter height="45" splitType="Stretch" />
-    <pageFooter height="54" splitType="Stretch" />
-    <summary height="42" splitType="Stretch" />
 </jasperReport>

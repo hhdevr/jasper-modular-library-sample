@@ -1,15 +1,15 @@
-package com.chaykin.jaspermodularsample.module;
+package com.chaykin.jasper.sample.module;
 
 import com.chaykin.jasper.core.annotation.JasperModularReport;
-import com.chaykin.jasper.core.model.ModularReportModule;
-import com.chaykin.jaspermodularsample.module.model.CompanyDetails;
+import com.chaykin.jasper.core.model.ModularReport;
+import com.chaykin.jasper.sample.module.model.CompanyDetails;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @JasperModularReport(templatePath = "/reports/modular_financial_report.jrxml")
-public class ModularFinancialReportModule extends ModularReportModule {
+public class ModularFinancialReportModule extends ModularReport {
 
     private CompanyDetails companyDetails;
 
@@ -37,7 +37,8 @@ public class ModularFinancialReportModule extends ModularReportModule {
                                         Double netProfit,
                                         RevenueModule revenueModule,
                                         ExpenseModule expenseModule,
-                                        ProfitModule profitModule) {
+                                        ProfitModule profitModule
+    ) {
         this.companyDetails = companyDetails;
         this.period = period;
         this.currency = currency;
