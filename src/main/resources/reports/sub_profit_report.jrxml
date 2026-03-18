@@ -3,12 +3,12 @@
 <jasperReport bottomMargin="20" columnWidth="555" language="java" leftMargin="20" name="Blank_A4"
               pageHeight="842" pageWidth="595" rightMargin="20" topMargin="20"
               uuid="4beba0ab-4b7d-4d13-a44c-74748a6ca794">
-    <subDataset name="breakdown">
+    <dataset name="breakdown">
         <field class="java.lang.String" name="month" />
         <field class="java.lang.Double" name="revenue" />
         <field class="java.lang.Double" name="expenses" />
         <field class="java.lang.Double" name="profit" />
-    </subDataset>
+    </dataset>
     <parameter class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"
                name="breakdown" />
     <parameter class="java.lang.Double" name="margin" />
@@ -17,13 +17,37 @@
     <parameter class="java.lang.Double" name="grossProfit" />
     <query language="sql" />
     <background splitType="Stretch" />
-    <title height="79" splitType="Stretch" />
-    <pageHeader height="35" splitType="Stretch" />
-    <columnHeader height="61" splitType="Stretch" />
     <detail>
-        <band height="125" splitType="Stretch" />
+        <band height="125" splitType="Stretch">
+            <element height="90" kind="component" uuid="40ee29b1-69e5-4b7d-8cd2-ddf7b5557a2e"
+                     width="120" x="0" y="0">
+                <component kind="list">
+                    <datasetRun subDataset="breakdown" uuid="cb5da557-5677-408d-9871-669308a67af5">
+                        <dataSourceExpression><![CDATA[$P{breakdown}]]></dataSourceExpression>
+                    </datasetRun>
+                    <contents height="30" width="120">
+                        <element height="30" kind="textField"
+                                 uuid="bba446d7-4944-4361-9fb2-9bd4cac6f884" width="30" x="0" y="0">
+                            <expression><![CDATA[$F{month}]]></expression>
+                        </element>
+                        <element height="30" kind="textField"
+                                 uuid="563314be-f056-4673-be21-0ce41985e43a" width="30" x="30"
+                                 y="0">
+                            <expression><![CDATA[$F{revenue}]]></expression>
+                        </element>
+                        <element height="30" kind="textField"
+                                 uuid="109810f7-c4ad-4f19-b160-b30141c9654c" width="30" x="60"
+                                 y="0">
+                            <expression><![CDATA[$F{expenses}]]></expression>
+                        </element>
+                        <element height="30" kind="textField"
+                                 uuid="6e387032-e730-42d5-9734-ac810ca29385" width="30" x="90"
+                                 y="0">
+                            <expression><![CDATA[$F{profit}]]></expression>
+                        </element>
+                    </contents>
+                </component>
+            </element>
+        </band>
     </detail>
-    <columnFooter height="45" splitType="Stretch" />
-    <pageFooter height="54" splitType="Stretch" />
-    <summary height="42" splitType="Stretch" />
 </jasperReport>

@@ -1,8 +1,8 @@
-package com.chaykin.jaspermodularsample.module;
+package com.chaykin.jasper.sample.module;
 
 import com.chaykin.jasper.core.annotation.JasperSubreport;
 import com.chaykin.jasper.core.model.SubreportModule;
-import com.chaykin.jaspermodularsample.module.model.ExpenseItem;
+import com.chaykin.jasper.sample.module.model.ExpenseItem;
 import lombok.Getter;
 import lombok.Setter;
 
