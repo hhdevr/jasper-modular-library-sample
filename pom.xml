@@ -20,7 +20,7 @@
     <properties>
         <java.version>25</java.version>
         <jasperreports.version>7.0.3</jasperreports.version>
-        <jasper-modular-starter.version>0.2.0</jasper-modular-starter.version>
+        <jasper-modular-starter.version>0.3.0</jasper-modular-starter.version>
     </properties>
 
     <dependencies>
