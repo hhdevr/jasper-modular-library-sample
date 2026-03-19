@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.5.final using JasperReports Library version 6.21.5-74d586df47b25dbd05bd0957999819196e59934a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="sub_revenue_report" pageWidth="520" pageHeight="842" columnWidth="520"
+              leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0"
+              uuid="ee08ddc4-4226-4bef-8d71-cb9d29cab163">
+    <subDataset name="items" uuid="370dc338-7bb4-49ea-8417-462346e2fb5a">
+        <field name="category" class="java.lang.String" />
+        <field name="amount" class="java.lang.Double" />
+        <field name="percent" class="java.lang.Double" />
+    </subDataset>
+    <parameter name="totalRevenue" class="java.lang.Double" />
+    <parameter name="growthPercent" class="java.lang.Double" />
+    <parameter name="items" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" />
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch" />
+    </background>
+    <detail>
+        <band height="82" splitType="Stretch">
+            <rectangle radius="2">
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="0" y="0"
+                               width="518" height="80" forecolor="#990000" backcolor="#FFFAF9"
+                               uuid="10ac0f6d-98ff-4c00-8616-842017d339f4" />
+                <graphicElement>
+                    <pen lineWidth="1.5" lineStyle="Dashed" />
+                </graphicElement>
+            </rectangle>
+            <rectangle>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="0" y="0"
+                               width="4" height="80" forecolor="#990000" backcolor="#990000"
+                               uuid="737ff46e-373f-41bc-a8f2-bb308261c1e2" />
+                <graphicElement>
+                    <pen lineWidth="0.0" />
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement x="10" y="3" width="200" height="12" forecolor="#990000"
+                               uuid="4e578c73-fcc2-4585-8728-9f71be3ebcaa" />
+                <textElement>
+                    <font size="7" isBold="true" />
+                </textElement>
+                <text><![CDATA[Subreport: Revenue]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="17" width="518" height="20"
+                               forecolor="#FFFFFF" backcolor="#3D6B9E"
+                               uuid="a3a381a9-d639-4446-a93e-4b94870ffd42" />
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="10" isBold="true" />
+                </textElement>
+                <text><![CDATA[REVENUE REPORT]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="41" width="95" height="14" forecolor="#3D6B9E"
+                               uuid="afeb8fcf-8d98-4436-aed1-78a7c61e059a" />
+                <textElement verticalAlignment="Middle">
+                    <font size="7" isBold="true" />
+                </textElement>
+                <text><![CDATA[Total Revenue:]]></text>
+            </staticText>
+            <textField pattern="#,##0.00">
+                <reportElement x="107" y="41" width="120" height="14"
+                               uuid="9d7605e1-7e6f-4b91-ba25-958205580a23" />
+                <textElement verticalAlignment="Middle">
+                    <font size="7" />
+                </textElement>
+                <textFieldExpression><![CDATA[$P{totalRevenue}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="240" y="41" width="45" height="14" forecolor="#3D6B9E"
+                               uuid="9c718cd3-05be-4c15-bc39-9e2d2724ae04" />
+                <textElement verticalAlignment="Middle">
+                    <font size="7" isBold="true" />
+                </textElement>
+                <text><![CDATA[Growth:]]></text>
+            </staticText>
+            <textField pattern="#,##0.00&apos;%&apos;">
+                <reportElement x="287" y="41" width="100" height="14"
+                               uuid="83816100-8af9-4c7e-8288-591267228629" />
+                <textElement verticalAlignment="Middle">
+                    <font size="7" />
+                </textElement>
+                <textFieldExpression><![CDATA[$P{growthPercent}]]></textFieldExpression>
+            </textField>
+            <componentElement>
+                <reportElement stretchType="RelativeToTallestObject" x="5" y="58" width="510"
+                               height="20" uuid="a2fb195b-7933-4b12-8e68-e5eba1f708d0" />
+                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
+                          xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+                    <datasetRun subDataset="items" uuid="412c0311-cda3-4d55-b012-f74641ab2e47">
+                        <dataSourceExpression><![CDATA[$P{items}]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:column width="170" uuid="8e180191-6034-455a-a6e3-a54b822f017c">
+                        <jr:columnHeader height="20">
+                            <staticText>
+                                <reportElement mode="Opaque" x="0" y="0" width="170" height="20"
+                                               forecolor="#FFFFFF" backcolor="#3D6B9E"
+                                               uuid="fb3b68d1-f4ca-4f78-a09d-c59dcd5ca326" />
+                                <box leftPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                                <textElement verticalAlignment="Middle">
+                                    <font size="8" isBold="true" />
+                                </textElement>
+                                <text><![CDATA[Category]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell height="18">
+                            <textField>
+                                <reportElement x="0" y="0" width="170" height="18"
+                                               uuid="a43ef979-bd88-4427-b5cd-064dc67fb3ca" />
+                                <box leftPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                                <textElement verticalAlignment="Middle">
+                                    <font size="7" />
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{category}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="170" uuid="76807ee0-9ee0-46f1-bf59-a1b1428366d4">
+                        <jr:columnHeader height="20">
+                            <staticText>
+                                <reportElement mode="Opaque" x="0" y="0" width="170" height="20"
+                                               forecolor="#FFFFFF" backcolor="#3D6B9E"
+                                               uuid="7283ab1a-fffa-4728-b6be-6de907d5992a" />
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                                <textElement textAlignment="Right" verticalAlignment="Middle">
+                                    <font size="8" isBold="true" />
+                                </textElement>
+                                <text><![CDATA[Amount]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell height="18">
+                            <textField pattern="#,##0.00">
+                                <reportElement x="0" y="0" width="170" height="18"
+                                               uuid="57eb9bb2-d071-4778-b6f0-16fc7b1baa51" />
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                                <textElement textAlignment="Right" verticalAlignment="Middle">
+                                    <font size="7" />
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="170" uuid="78f1920b-7b7d-4ca2-af91-4a057aaedd70">
+                        <jr:columnHeader height="20">
+                            <staticText>
+                                <reportElement mode="Opaque" x="0" y="0" width="170" height="20"
+                                               forecolor="#FFFFFF" backcolor="#3D6B9E"
+                                               uuid="616a1ce1-2a98-47f5-b66a-ba2f83ea7445" />
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                                <textElement textAlignment="Right" verticalAlignment="Middle">
+                                    <font size="8" isBold="true" />
+                                </textElement>
+                                <text><![CDATA[Percent (%)]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell height="18">
+                            <textField pattern="#,##0.00">
+                                <reportElement x="0" y="0" width="170" height="18"
+                                               uuid="76c5ab6b-aa42-4ca0-86a3-d52cbcbaaedb" />
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                                <textElement textAlignment="Right" verticalAlignment="Middle">
+                                    <font size="7" />
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{percent}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                </jr:table>
+            </componentElement>
+        </band>
+    </detail>
+</jasperReport>

@@ -1,0 +1,206 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="sub_profit_report" language="java" pageWidth="520" pageHeight="842"
+              columnWidth="520" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0"
+              uuid="daa00832-47f4-42f1-be5b-770491e0aa72">
+    <dataset name="breakdown" uuid="54c546aa-ba78-4125-ad61-86c6cb215a8d">
+        <field name="month" class="java.lang.String" />
+        <field name="revenue" class="java.lang.Double" />
+        <field name="expenses" class="java.lang.Double" />
+        <field name="profit" class="java.lang.Double" />
+    </dataset>
+    <parameter name="grossProfit" class="java.lang.Double" />
+    <parameter name="operatingProfit" class="java.lang.Double" />
+    <parameter name="netProfit" class="java.lang.Double" />
+    <parameter name="margin" class="java.lang.Double" />
+    <parameter name="breakdown"
+               class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" />
+    <query language="sql"><![CDATA[]]></query>
+    <background splitType="Stretch" />
+    <detail>
+        <band height="105" splitType="Stretch">
+            <element kind="rectangle" uuid="de4a5449-321b-4a00-8de2-789559f774b6"
+                     stretchType="ElementGroupHeight" mode="Opaque" x="0" y="0" width="518"
+                     height="103" forecolor="#990000" backcolor="#FFFAF9" radius="2">
+                <pen lineWidth="1.5" lineStyle="Dashed" />
+            </element>
+            <element kind="rectangle" uuid="a473d6a6-4680-49f9-b64e-450328012588"
+                     stretchType="ElementGroupHeight" mode="Opaque" x="0" y="0" width="4"
+                     height="103" forecolor="#990000" backcolor="#990000">
+                <pen lineWidth="0.0" />
+            </element>
+            <element kind="staticText" uuid="d1d6bd56-df18-41ea-8c3a-967245da0b4d" x="10" y="3"
+                     width="200" height="12" forecolor="#990000" fontSize="7.0" bold="true">
+                <text><![CDATA[Subreport: Profit]]></text>
+            </element>
+            <element kind="staticText" uuid="9eb0d66f-24b0-40b5-a22b-42898680895d" mode="Opaque"
+                     x="0" y="17" width="518" height="20" forecolor="#FFFFFF" backcolor="#3D6B9E"
+                     fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+                <text><![CDATA[PROFIT REPORT]]></text>
+            </element>
+            <element kind="staticText" uuid="e4a350ec-2cc4-4074-812c-8a7ed3e1c7b8" mode="Opaque"
+                     x="5" y="40" width="120" height="16" forecolor="#3D6B9E" backcolor="#EAF0FB"
+                     fontSize="7.0" bold="true" vTextAlign="Middle">
+                <text><![CDATA[Gross Profit]]></text>
+                <box leftPadding="4">
+                    <pen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+            </element>
+            <element kind="textField" uuid="9ec3a397-4264-4b48-8ce3-ce5ad160c4ec" mode="Opaque"
+                     x="125" y="40" width="125" height="16" backcolor="#FFFFFF" fontSize="7.0"
+                     pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
+                <expression><![CDATA[$P{grossProfit}]]></expression>
+                <box leftPadding="4" rightPadding="4">
+                    <pen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+            </element>
+            <element kind="staticText" uuid="d57e1db5-77cd-4a6a-943f-ac0966d2b611" mode="Opaque"
+                     x="258" y="40" width="130" height="16" forecolor="#3D6B9E" backcolor="#EAF0FB"
+                     fontSize="7.0" bold="true" vTextAlign="Middle">
+                <text><![CDATA[Operating Profit]]></text>
+                <box leftPadding="4">
+                    <pen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+            </element>
+            <element kind="textField" uuid="11e818e6-d9ad-4427-85ea-a92eb746dffb" mode="Opaque"
+                     x="388" y="40" width="127" height="16" backcolor="#FFFFFF" fontSize="7.0"
+                     pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
+                <expression><![CDATA[$P{operatingProfit}]]></expression>
+                <box leftPadding="4" rightPadding="4">
+                    <pen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+            </element>
+            <element kind="staticText" uuid="da97567c-4947-41eb-a37b-49facb4d9096" mode="Opaque"
+                     x="5" y="56" width="120" height="16" forecolor="#3D6B9E" backcolor="#F4F7FD"
+                     fontSize="7.0" bold="true" vTextAlign="Middle">
+                <text><![CDATA[Net Profit]]></text>
+                <box leftPadding="4">
+                    <pen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+            </element>
+            <element kind="textField" uuid="63109b06-f793-41b2-92c5-c686a5a9227a" mode="Opaque"
+                     x="125" y="56" width="125" height="16" backcolor="#FFFFFF" fontSize="7.0"
+                     pattern="#,##0.00" bold="true" hTextAlign="Right" vTextAlign="Middle">
+                <expression><![CDATA[$P{netProfit}]]></expression>
+                <box leftPadding="4" rightPadding="4">
+                    <pen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+            </element>
+            <element kind="staticText" uuid="e3059123-102e-4d9e-a35a-9bbaa8087586" mode="Opaque"
+                     x="258" y="56" width="130" height="16" forecolor="#3D6B9E" backcolor="#F4F7FD"
+                     fontSize="7.0" bold="true" vTextAlign="Middle">
+                <text><![CDATA[Margin]]></text>
+                <box leftPadding="4">
+                    <pen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+            </element>
+            <element kind="textField" uuid="05f02ca6-c37e-4953-9773-c311e96fbe7b" mode="Opaque"
+                     x="388" y="56" width="127" height="16" backcolor="#FFFFFF" fontSize="7.0"
+                     pattern="#,##0.00'%'" hTextAlign="Right" vTextAlign="Middle">
+                <expression><![CDATA[$P{margin}]]></expression>
+                <box leftPadding="4" rightPadding="4">
+                    <pen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+            </element>
+            <element kind="component" uuid="b408b29d-2b0e-4cbf-b716-6e897b2d2eed"
+                     stretchType="ElementGroupHeight" x="5" y="75" width="510" height="28">
+                <component kind="table">
+                    <datasetRun uuid="42ea2356-b929-4320-aff6-74f60e670d26" subDataset="breakdown">
+                        <dataSourceExpression><![CDATA[$P{breakdown}]]></dataSourceExpression>
+                    </datasetRun>
+                    <column kind="single" uuid="b0e22b26-abf2-4f53-972a-4b3d2d48e5cf" width="127">
+                        <columnHeader height="20">
+                            <element kind="staticText" uuid="a944adb1-eea1-4b9f-89dc-c860c3712220"
+                                     mode="Opaque" x="0" y="0" width="127" height="20"
+                                     forecolor="#FFFFFF" backcolor="#3D6B9E" fontSize="8.0"
+                                     bold="true" vTextAlign="Middle">
+                                <text><![CDATA[Month]]></text>
+                                <box leftPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="18">
+                            <element kind="textField" uuid="83ea76c4-373e-44bc-83d0-13e920d29342"
+                                     x="0" y="0" width="127" height="18" fontSize="7.0"
+                                     vTextAlign="Middle">
+                                <expression><![CDATA[$F{month}]]></expression>
+                                <box leftPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                            </element>
+                        </detailCell>
+                    </column>
+                    <column kind="single" uuid="894fb5bc-3c16-4ff0-8fa3-7668ec329992" width="128">
+                        <columnHeader height="20">
+                            <element kind="staticText" uuid="506e89a6-4491-43e6-b706-84c332011d6b"
+                                     mode="Opaque" x="0" y="0" width="128" height="20"
+                                     forecolor="#FFFFFF" backcolor="#3D6B9E" fontSize="8.0"
+                                     bold="true" hTextAlign="Right" vTextAlign="Middle">
+                                <text><![CDATA[Revenue]]></text>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="18">
+                            <element kind="textField" uuid="94b6c79a-fb26-4bc4-90de-a716b896c5c9"
+                                     x="0" y="0" width="128" height="18" fontSize="7.0"
+                                     pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
+                                <expression><![CDATA[$F{revenue}]]></expression>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                            </element>
+                        </detailCell>
+                    </column>
+                    <column kind="single" uuid="c72316b6-fdef-47cd-a507-b12e15880760" width="128">
+                        <columnHeader height="20">
+                            <element kind="staticText" uuid="daa65abf-27a2-4778-b472-54eec5370779"
+                                     mode="Opaque" x="0" y="0" width="128" height="20"
+                                     forecolor="#FFFFFF" backcolor="#3D6B9E" fontSize="8.0"
+                                     bold="true" hTextAlign="Right" vTextAlign="Middle">
+                                <text><![CDATA[Expenses]]></text>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="18">
+                            <element kind="textField" uuid="7c520b76-4843-4e4d-94d1-c26319b042f9"
+                                     x="0" y="0" width="128" height="18" fontSize="7.0"
+                                     pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
+                                <expression><![CDATA[$F{expenses}]]></expression>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                            </element>
+                        </detailCell>
+                    </column>
+                    <column kind="single" uuid="e70f6d8d-7a92-450b-b863-2e8598f0b4f5" width="127">
+                        <columnHeader height="20">
+                            <element kind="staticText" uuid="a9c206e9-8023-4b33-bc17-58449d049b2d"
+                                     mode="Opaque" x="0" y="0" width="127" height="20"
+                                     forecolor="#FFFFFF" backcolor="#3D6B9E" fontSize="8.0"
+                                     bold="true" hTextAlign="Right" vTextAlign="Middle">
+                                <text><![CDATA[Profit]]></text>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="18">
+                            <element kind="textField" uuid="51ecd1d6-0d54-4cfd-93a6-62eddf56ab63"
+                                     x="0" y="0" width="127" height="18" fontSize="7.0"
+                                     pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
+                                <expression><![CDATA[$F{profit}]]></expression>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                            </element>
+                        </detailCell>
+                    </column>
+                </component>
+            </element>
+        </band>
+    </detail>
+</jasperReport>

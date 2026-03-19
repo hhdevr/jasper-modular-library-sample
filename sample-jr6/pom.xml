@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.chaykin</groupId>
+        <artifactId>jasper-modular-sample-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jasper-modular-sample-jr6</artifactId>
+    <name>Jasper Modular Sample (JasperReports 6.x)</name>
+    <description>Sample application demonstrating jasper-modular-library with JasperReports 6.x
+    </description>
+
+    <properties>
+        <jasperreports.version>6.21.5</jasperreports.version>
+        <start-class>com.chaykin.jasper.sample.JR6SampleApplication</start-class>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.hhdevr</groupId>
+            <artifactId>jasper-modular-starter-jr6</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>io.github.hhdevr</groupId>
+                            <artifactId>jasper-modular-processor-jr6</artifactId>
+                            <version>${jasper-modular.version}</version>
+                        </path>
+                        <path>
+                            <groupId>net.sf.jasperreports</groupId>
+                            <artifactId>jasperreports</artifactId>
+                            <version>${jasperreports.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

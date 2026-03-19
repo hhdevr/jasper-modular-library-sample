@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.5.final using JasperReports Library version 6.21.5-74d586df47b25dbd05bd0957999819196e59934a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="sub_title_report" pageWidth="555" pageHeight="842" columnWidth="555"
+              leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0"
+              uuid="e547022a-ce82-49f9-be39-a05c0f6e8a9a">
+    <parameter name="companyDetails"
+               class="com.chaykin.jasper.sample.module.model.CompanyDetails" />
+    <parameter name="period" class="java.lang.String" />
+    <parameter name="currency" class="java.lang.String" />
+    <parameter name="totalRevenue" class="java.lang.Double" />
+    <parameter name="totalExpenses" class="java.lang.Double" />
+    <parameter name="netProfit" class="java.lang.Double" />
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch" />
+    </background>
+    <detail>
+        <band height="234" splitType="Stretch">
+            <rectangle radius="3">
+                <reportElement mode="Opaque" x="0" y="0" width="553" height="232"
+                               forecolor="#CC0000" backcolor="#FFFFFF"
+                               uuid="998632c9-2f03-41c7-b383-ecf4e17868af" />
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Solid" />
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement x="8" y="3" width="200" height="13" forecolor="#CC0000"
+                               uuid="5a82e660-ad8e-4a37-856a-4b4af72003bb" />
+                <textElement>
+                    <font size="8" isBold="true" />
+                </textElement>
+                <text><![CDATA[Subreport: Title]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="2" y="18" width="551" height="22"
+                               forecolor="#FFFFFF" backcolor="#1A2E45"
+                               uuid="04bd0197-b3e9-4343-8671-4a4df4d21ebb" />
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11" isBold="true" />
+                </textElement>
+                <text><![CDATA[COMPANY REPORT - TITLE PAGE]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="5" y="44" width="125" height="23"
+                               forecolor="#1A2E45" backcolor="#EAF0FB"
+                               uuid="a3464ab3-f594-4555-ba4e-827c98aa08e7" />
+                <box leftPadding="5">
+                    <topPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <text><![CDATA[Company Name]]></text>
+            </staticText>
+            <textField>
+                <reportElement mode="Opaque" x="130" y="44" width="200" height="23"
+                               backcolor="#FFFFFF" uuid="c5fccc02-6529-4cb3-841d-19e9279ab537" />
+                <box leftPadding="5" rightPadding="4">
+                    <topPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="1.0" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <textFieldExpression><![CDATA[$P{companyDetails}.getName()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement mode="Opaque" x="5" y="67" width="125" height="23"
+                               forecolor="#1A2E45" backcolor="#F4F7FD"
+                               uuid="bde23d2a-37f2-4052-a978-b899e16a290e" />
+                <box leftPadding="5">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <text><![CDATA[Manager]]></text>
+            </staticText>
+            <textField>
+                <reportElement mode="Opaque" x="130" y="67" width="200" height="23"
+                               backcolor="#FFFFFF" uuid="87b2ca50-6427-4478-a7df-cb77866402fb" />
+                <box leftPadding="5" rightPadding="4">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="1.0" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" />
+                </textElement>
+                <textFieldExpression>
+                    <![CDATA[$P{companyDetails}.getManager()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement mode="Opaque" x="5" y="90" width="125" height="23"
+                               forecolor="#1A2E45" backcolor="#EAF0FB"
+                               uuid="67598453-5f67-4533-a0dd-ce8bfbbab033" />
+                <box leftPadding="5">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <text><![CDATA[Period]]></text>
+            </staticText>
+            <textField>
+                <reportElement mode="Opaque" x="130" y="90" width="200" height="23"
+                               backcolor="#FFFFFF" uuid="de24505b-1e86-49bb-9092-89e5ab0cec29" />
+                <box leftPadding="5" rightPadding="4">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="1.0" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" />
+                </textElement>
+                <textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement mode="Opaque" x="5" y="113" width="125" height="23"
+                               forecolor="#1A2E45" backcolor="#F4F7FD"
+                               uuid="fbe0e958-c740-4b88-a3aa-fd8b4e670fa1" />
+                <box leftPadding="5">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <text><![CDATA[Currency]]></text>
+            </staticText>
+            <textField>
+                <reportElement mode="Opaque" x="130" y="113" width="200" height="23"
+                               backcolor="#FFFFFF" uuid="07513bb6-17d4-491e-8e65-8f9342a7f0b2" />
+                <box leftPadding="5" rightPadding="4">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="1.0" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" />
+                </textElement>
+                <textFieldExpression><![CDATA[$P{currency}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement mode="Opaque" x="5" y="141" width="325" height="19"
+                               forecolor="#FFFFFF" backcolor="#1A2E45"
+                               uuid="884360eb-9b9b-46e9-9916-cda7d12b369e" />
+                <box leftPadding="5">
+                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <text><![CDATA[Financial Summary]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="5" y="160" width="155" height="22"
+                               forecolor="#1A2E45" backcolor="#EAF0FB"
+                               uuid="2c4c9781-8088-43a9-b6da-8f5416f22d81" />
+                <box leftPadding="5">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <text><![CDATA[Total Revenue]]></text>
+            </staticText>
+            <textField pattern="#,##0.00">
+                <reportElement mode="Opaque" x="160" y="160" width="170" height="22"
+                               backcolor="#FFFFFF" uuid="5b6d0daf-aecc-47f1-bc8b-d9689f2a394b" />
+                <box leftPadding="5" rightPadding="5">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="1.0" lineColor="#C0CEEA" />
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="8" />
+                </textElement>
+                <textFieldExpression><![CDATA[$P{totalRevenue}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement mode="Opaque" x="5" y="182" width="155" height="22"
+                               forecolor="#1A2E45" backcolor="#F4F7FD"
+                               uuid="c1cd318d-fc00-47e2-8352-143e01ab22f6" />
+                <box leftPadding="5">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <text><![CDATA[Total Expenses]]></text>
+            </staticText>
+            <textField pattern="#,##0.00">
+                <reportElement mode="Opaque" x="160" y="182" width="170" height="22"
+                               backcolor="#FFFFFF" uuid="cc85e5b0-bacb-4a91-82a9-ec4d868d7a0f" />
+                <box leftPadding="5" rightPadding="5">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="1.0" lineColor="#C0CEEA" />
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="8" />
+                </textElement>
+                <textFieldExpression><![CDATA[$P{totalExpenses}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement mode="Opaque" x="5" y="204" width="155" height="22"
+                               forecolor="#1A2E45" backcolor="#EAF0FB"
+                               uuid="3ce5040d-43e2-47f3-bdee-fd1d8b65300f" />
+                <box leftPadding="5">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="0.5" lineColor="#C0CEEA" />
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <text><![CDATA[Net Profit]]></text>
+            </staticText>
+            <textField pattern="#,##0.00">
+                <reportElement mode="Opaque" x="160" y="204" width="170" height="22"
+                               backcolor="#FFFFFF" uuid="6e90e991-76ff-4712-a099-87ea83d0d6e9" />
+                <box leftPadding="5" rightPadding="5">
+                    <topPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <leftPen lineWidth="0.5" lineColor="#C0CEEA" />
+                    <bottomPen lineWidth="1.0" lineColor="#C0CEEA" />
+                    <rightPen lineWidth="1.0" lineColor="#C0CEEA" />
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="8" isBold="true" />
+                </textElement>
+                <textFieldExpression><![CDATA[$P{netProfit}]]></textFieldExpression>
+            </textField>
+            <image vAlign="Middle">
+                <reportElement x="340" y="44" width="208" height="182"
+                               uuid="b2c4fef0-b5c9-4f05-b556-8091564e494a" />
+                <imageExpression><![CDATA[$P{companyDetails}.getLogo()]]></imageExpression>
+            </image>
+        </band>
+    </detail>
+</jasperReport>

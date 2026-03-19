@@ -1,0 +1,59 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="company_report" language="java" pageWidth="595" pageHeight="842"
+              columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="4a3a5c2a-fa1e-475c-9f61-2515baf03b99">
+    <parameter name="TitleReport" class="net.sf.jasperreports.engine.JasperReport" />
+    <parameter name="TitleMapParameter" class="java.util.Map" />
+    <parameter name="FinancialSubModuleReport" class="net.sf.jasperreports.engine.JasperReport" />
+    <parameter name="FinancialSubModuleMapParameter" class="java.util.Map" />
+    <query language="sql"><![CDATA[]]></query>
+    <background splitType="Stretch" />
+    <title height="38" splitType="Stretch">
+        <element kind="staticText" uuid="fc8adc47-ca5e-4d11-9a3b-58d1ae687469" mode="Opaque" x="0"
+                 y="0" width="555" height="34" forecolor="#FFFFFF" backcolor="#1A2E45"
+                 fontSize="14.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[ROOT REPORT - COMPANY OVERVIEW]]></text>
+            <box>
+                <bottomPen lineWidth="3.0" lineColor="#CC0000" />
+            </box>
+        </element>
+    </title>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <element kind="subreport" uuid="1c09b6a5-f927-4447-8aa9-30e68372cc59"
+                     stretchType="ElementGroupHeight" x="0" y="4" width="555" height="10"
+                     removeLineWhenBlank="true">
+                <parametersMapExpression><![CDATA[$P{TitleMapParameter}]]></parametersMapExpression>
+                <dataSourceExpression><![CDATA[
+                    new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+                <expression><![CDATA[$P{TitleReport}]]></expression>
+            </element>
+        </band>
+        <band height="10" splitType="Stretch" />
+        <band height="20" splitType="Stretch">
+            <element kind="subreport" uuid="e5c8cc25-4eee-44bd-9064-07ddacf13051"
+                     stretchType="ElementGroupHeight" x="0" y="0" width="555" height="10"
+                     removeLineWhenBlank="true">
+                <parametersMapExpression>
+                    <![CDATA[$P{FinancialSubModuleMapParameter}]]></parametersMapExpression>
+                <dataSourceExpression><![CDATA[
+                    new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+                <expression><![CDATA[$P{FinancialSubModuleReport}]]></expression>
+            </element>
+        </band>
+    </detail>
+    <pageFooter height="18" splitType="Stretch">
+        <element kind="line" uuid="1ee98f51-d8a0-48c0-b2d1-063bcb2e921f" x="0" y="0" width="555"
+                 height="1" forecolor="#AAAAAA">
+            <pen lineWidth="0.5" />
+        </element>
+        <element kind="staticText" uuid="fc527c6d-24dc-48d9-a0f0-eb4222063bfe" x="0" y="4"
+                 width="200" height="12" forecolor="#888888" fontSize="7.0">
+            <text><![CDATA[Company Report]]></text>
+        </element>
+        <element kind="textField" uuid="74693c02-0ae9-4623-9e04-b41d7278c3a7" x="455" y="4"
+                 width="100" height="12" forecolor="#888888" fontSize="7.0" hTextAlign="Right">
+            <expression><![CDATA["Page " + $V{PAGE_NUMBER}]]></expression>
+        </element>
+    </pageFooter>
+</jasperReport>
