@@ -1,0 +1,134 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="sub_expense_report" language="java" pageWidth="520" pageHeight="842"
+              columnWidth="520" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0"
+              uuid="7fba009f-b221-4541-9c53-21deaec3702d">
+    <dataset name="items" uuid="c391eba9-242b-4386-a22a-b5fa045ae9f9">
+        <field name="category" class="java.lang.String" />
+        <field name="amount" class="java.lang.Double" />
+        <field name="percent" class="java.lang.Double" />
+    </dataset>
+    <parameter name="totalExpenses" class="java.lang.Double" />
+    <parameter name="growthPercent" class="java.lang.Double" />
+    <parameter name="items" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" />
+    <query language="sql"><![CDATA[]]></query>
+    <background splitType="Stretch" />
+    <detail>
+        <band height="82" splitType="Stretch">
+            <element kind="rectangle" uuid="36f8fa22-5e97-481b-81a6-96d7979fed0e"
+                     stretchType="ElementGroupHeight" mode="Opaque" x="0" y="0" width="518"
+                     height="80" forecolor="#990000" backcolor="#FFFAF9" radius="2">
+                <pen lineWidth="1.5" lineStyle="Dashed" />
+            </element>
+            <element kind="rectangle" uuid="e566c1e2-aa95-4b79-b643-934695fd367b"
+                     stretchType="ElementGroupHeight" mode="Opaque" x="0" y="0" width="4"
+                     height="80" forecolor="#990000" backcolor="#990000">
+                <pen lineWidth="0.0" />
+            </element>
+            <element kind="staticText" uuid="724066f9-676f-4c65-9b3d-21bfe2eac923" x="10" y="3"
+                     width="200" height="12" forecolor="#990000" fontSize="7.0" bold="true">
+                <text><![CDATA[Subreport: Expense]]></text>
+            </element>
+            <element kind="staticText" uuid="67baec61-bbec-40ff-9c41-89757f37c24e" mode="Opaque"
+                     x="0" y="17" width="518" height="20" forecolor="#FFFFFF" backcolor="#3D6B9E"
+                     fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+                <text><![CDATA[EXPENSE REPORT]]></text>
+            </element>
+            <element kind="staticText" uuid="8c1e2880-849d-4f5c-b61d-ae09773e36c9" x="10" y="41"
+                     width="100" height="14" forecolor="#3D6B9E" fontSize="7.0" bold="true"
+                     vTextAlign="Middle">
+                <text><![CDATA[Total Expenses:]]></text>
+            </element>
+            <element kind="textField" uuid="b75aef7e-e179-410c-9a15-033b85ecfa39" x="112" y="41"
+                     width="120" height="14" fontSize="7.0" pattern="#,##0.00" vTextAlign="Middle">
+                <expression><![CDATA[$P{totalExpenses}]]></expression>
+            </element>
+            <element kind="staticText" uuid="797ab545-35c8-49ef-bea7-c5965936fc22" x="245" y="41"
+                     width="45" height="14" forecolor="#3D6B9E" fontSize="7.0" bold="true"
+                     vTextAlign="Middle">
+                <text><![CDATA[Growth:]]></text>
+            </element>
+            <element kind="textField" uuid="4f814c84-c6ab-47f8-ad71-29f2d6a6a6a3" x="292" y="41"
+                     width="100" height="14" fontSize="7.0" pattern="#,##0.00'%'"
+                     vTextAlign="Middle">
+                <expression><![CDATA[$P{growthPercent}]]></expression>
+            </element>
+            <element kind="component" uuid="c066f858-cc6b-4da6-a920-448a4ed8a067"
+                     stretchType="ElementGroupHeight" x="5" y="58" width="510" height="20">
+                <component kind="table">
+                    <datasetRun uuid="9f620ce1-3abe-4dc3-97c7-f1c222862834" subDataset="items">
+                        <dataSourceExpression><![CDATA[$P{items}]]></dataSourceExpression>
+                    </datasetRun>
+                    <column kind="single" uuid="407c4117-0f31-41ac-8a72-a3ad90208c1d" width="170">
+                        <columnHeader height="20">
+                            <element kind="staticText" uuid="504d33b9-3c1e-4ca7-b341-306ca2209cc5"
+                                     mode="Opaque" x="0" y="0" width="170" height="20"
+                                     forecolor="#FFFFFF" backcolor="#3D6B9E" fontSize="8.0"
+                                     bold="true" vTextAlign="Middle">
+                                <text><![CDATA[Category]]></text>
+                                <box leftPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="18">
+                            <element kind="textField" uuid="09b68041-649e-4f5d-b5ae-95f91e06dad6"
+                                     x="0" y="0" width="170" height="18" fontSize="7.0"
+                                     vTextAlign="Middle">
+                                <expression><![CDATA[$F{category}]]></expression>
+                                <box leftPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                            </element>
+                        </detailCell>
+                    </column>
+                    <column kind="single" uuid="05c1416b-9769-4dc7-b0a5-9ea8c0b6efd9" width="170">
+                        <columnHeader height="20">
+                            <element kind="staticText" uuid="192c0a6a-88f9-40b7-b550-e8de85cfca1c"
+                                     mode="Opaque" x="0" y="0" width="170" height="20"
+                                     forecolor="#FFFFFF" backcolor="#3D6B9E" fontSize="8.0"
+                                     bold="true" hTextAlign="Right" vTextAlign="Middle">
+                                <text><![CDATA[Amount]]></text>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="18">
+                            <element kind="textField" uuid="c84f9639-1286-4a6b-9acc-38fe7d82005d"
+                                     x="0" y="0" width="170" height="18" fontSize="7.0"
+                                     pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
+                                <expression><![CDATA[$F{amount}]]></expression>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                            </element>
+                        </detailCell>
+                    </column>
+                    <column kind="single" uuid="c67e62e5-0a11-4ffc-8b33-8e8c8329836d" width="170">
+                        <columnHeader height="20">
+                            <element kind="staticText" uuid="781516db-4d9c-4fc0-8d06-7de438693834"
+                                     mode="Opaque" x="0" y="0" width="170" height="20"
+                                     forecolor="#FFFFFF" backcolor="#3D6B9E" fontSize="8.0"
+                                     bold="true" hTextAlign="Right" vTextAlign="Middle">
+                                <text><![CDATA[Percent (%)]]></text>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="1.0" lineColor="#1A3A5C" />
+                                </box>
+                            </element>
+                        </columnHeader>
+                        <detailCell height="18">
+                            <element kind="textField" uuid="09de889b-1fe6-4c00-a882-315ab7123c7e"
+                                     x="0" y="0" width="170" height="18" fontSize="7.0"
+                                     pattern="#,##0.00" hTextAlign="Right" vTextAlign="Middle">
+                                <expression><![CDATA[$F{percent}]]></expression>
+                                <box leftPadding="5" rightPadding="5">
+                                    <pen lineWidth="0.5" lineColor="#CCCCCC" />
+                                </box>
+                            </element>
+                        </detailCell>
+                    </column>
+                </component>
+            </element>
+        </band>
+    </detail>
+</jasperReport>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.5.final using JasperReports Library version 6.21.5-74d586df47b25dbd05bd0957999819196e59934a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="company_report" pageWidth="595" pageHeight="842" columnWidth="555"
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="ab622e17-838e-447f-845f-8e588c43e199">
+    <parameter name="TitleReport" class="net.sf.jasperreports.engine.JasperReport" />
+    <parameter name="TitleMapParameter" class="java.util.Map" />
+    <parameter name="FinancialSubModuleReport" class="net.sf.jasperreports.engine.JasperReport" />
+    <parameter name="FinancialSubModuleMapParameter" class="java.util.Map" />
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch" />
+    </background>
+    <title>
+        <band height="38" splitType="Stretch">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="0" width="555" height="34" forecolor="#FFFFFF"
+                               backcolor="#1A2E45" uuid="39ca6e34-7d3a-4ca2-824c-3d33df8fd060" />
+                <box>
+                    <bottomPen lineWidth="3.0" lineColor="#CC0000" />
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isBold="true" />
+                </textElement>
+                <text><![CDATA[ROOT REPORT - COMPANY OVERVIEW]]></text>
+            </staticText>
+        </band>
+    </title>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <subreport>
+                <reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0"
+                               y="4" width="555" height="10" isRemoveLineWhenBlank="true"
+                               uuid="b34915ed-9f67-4f51-84a6-66d5d8891ce6" />
+                <parametersMapExpression><![CDATA[$P{TitleMapParameter}]]></parametersMapExpression>
+                <dataSourceExpression>
+                    <![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+                <subreportExpression><![CDATA[$P{TitleReport}]]></subreportExpression>
+            </subreport>
+        </band>
+        <band height="10" splitType="Stretch" />
+        <band height="20" splitType="Stretch">
+            <subreport>
+                <reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0"
+                               y="0" width="555" height="10" isRemoveLineWhenBlank="true"
+                               uuid="4615ede7-4e9d-4d5d-9001-efd960c98e35" />
+                <parametersMapExpression>
+                    <![CDATA[$P{FinancialSubModuleMapParameter}]]></parametersMapExpression>
+                <dataSourceExpression>
+                    <![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+                <subreportExpression><![CDATA[$P{FinancialSubModuleReport}]]></subreportExpression>
+            </subreport>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="18">
+            <line>
+                <reportElement x="0" y="0" width="555" height="1" forecolor="#AAAAAA"
+                               uuid="83decc56-4911-40fa-9210-3b6cc83784ec" />
+                <graphicElement>
+                    <pen lineWidth="0.5" />
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="0" y="4" width="200" height="12" forecolor="#888888"
+                               uuid="a79db51d-baac-4f9b-888c-5af9ca538b17" />
+                <textElement>
+                    <font size="7" />
+                </textElement>
+                <text><![CDATA[Company Report]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="455" y="4" width="100" height="12" forecolor="#888888"
+                               uuid="030e8c80-fe2f-4a57-b453-5d53a24a5bac" />
+                <textElement textAlignment="Right">
+                    <font size="7" />
+                </textElement>
+                <textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>
